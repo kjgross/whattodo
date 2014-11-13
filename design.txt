@@ -1,0 +1,13 @@
+Purpose:
+Visitor answers 1-3 questions. App surfaces activities that match their response. Similar to songza but for activities.
+
+
+Allow visitors to find activities to do that day, based on 1-3 questions.
+Allow logged in users to find activities and add/edit activities
+
+
+Models:
+
+1. Users table for login purposes (UID, first_name, email, hash-password)
+2. Activities table (id, name, link, image-link, weather, cost, #people)
+3. Users-Activites table -> many to many relationship, UID-ActivityID unique primary key (if in this table, that user has done that)
