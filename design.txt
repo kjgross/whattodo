@@ -11,3 +11,12 @@ Models:
 1. Users table for login purposes (UID, first_name, email, hash-password)
 2. Activities table (id, name, link, image-link, weather, cost, #people)
 3. Users-Activites table -> many to many relationship, UID-ActivityID unique primary key (if in this table, that user has done that)
+
+
+
+Initial set up of environment:
+1. Set up the virtualenv - virtualenv env
+2. Activate the virtualenv - source env/bin/activate
+3. Install the dependencies - pip install flask sqlalchemy flask-login flask-script flask-migrate mistune
+4. Freeze the dependencies - pip freeze > requirements.txt
+5. Ignore the virtualenv - echo env > .gitignore
