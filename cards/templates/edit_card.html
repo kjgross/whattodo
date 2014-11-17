@@ -2,25 +2,25 @@
 
 {% block content %}
 <h1>
-    Add Activity Card
+    Edit Activity Card
 </h1>
 
 <form role="form" method="POST">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Skydiving" required></input>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Skydiving" value="{{card.name}}" required></input>
     </div>
     <div class="form-group">
         <label for="image_link">Image Link</label>
-        <input class="form-control" id="image_link" name="image_link" placeholder="http://www.howtoskydive.com/image1.jpg" required></input>
+        <input class="form-control" id="image_link" name="image_link" placeholder="http://www.howtoskydive.com/image1.jpg" value="{{card.image_link}}"required></input>
     </div>
     <div class="form-group">
         <label for="link">Activity Link</label>
-        <input class="form-control" id="link" name="link" placeholder="http://www.howtoskydive.com"></input>
+        <input class="form-control" id="link" name="link" placeholder="http://www.howtoskydive.com" value="{{card.link}}"></input>
     </div>
     <div class="form-group">
         <h4>Where should this activity take place?</h4>
-        <input type="radio" name="weather" value="outside" checked>Outside
+        <input type="radio" name="weather" value="outside">Outside
         <br>
         <input type="radio" name="weather" value="inside">Inside
     </div>
@@ -28,13 +28,13 @@
         <h4>How much does this activity cost?</h4>
         <input type="radio" name="cost" value="free">Free
         <br>
-        <input type="radio" name="cost" value="paid" checked>Paid
+        <input type="radio" name="cost" value="paid">Paid
     </div>
     <div class="form-group">
         <h4>Is this a group or a single person activity?</h4>
         <input type="radio" name="num_people" value="single">Single Person
         <br>
-        <input type="radio" name="num_people" value="group" checked>Group
+        <input type="radio" name="num_people" value="group">Group
     </div>
 
 

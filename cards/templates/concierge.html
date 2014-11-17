@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>
+    What should I do today?
+</h1>
+
+<form role="form" method="POST">
+    <div class="form-group">
+        <h4>Where should this activity take place?</h4>
+        <input type="radio" name="weather" value="outside">Outside
+        <br>
+        <input type="radio" name="weather" value="inside">Inside
+    </div>
+    <div class="form-group">
+        <h4>How much does this activity cost?</h4>
+        <input type="radio" name="cost" value="free">Free
+        <br>
+        <input type="radio" name="cost" value="paid">Paid
+    </div>
+    <div class="form-group">
+        <h4>Is this a group or a single person activity?</h4>
+        <input type="radio" name="num_people" value="single">Single Person
+        <br>
+        <input type="radio" name="num_people" value="group">Group
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% endblock %}

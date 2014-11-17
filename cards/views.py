@@ -89,7 +89,57 @@ def add_card_post():
 	return redirect(url_for("cards"))
 
 
+@app.route("/card/edit/<int:card_id>", methods=["GET"])
+#@login_required
+def edit_card_get(card_id):
+
+	cards = session.query(Card)
+	cards = cards[card_id]
+
+	return render_template("edit_card.html",
+    	card=cards
+	)
+
+@app.route("/card/edit/<int:card>", methods=["POST"])
+#@login_required
+def edit_card_post(card):
+	cards = session.query(Card)
+	cards = cards[card]
+
+	cards.name=request.form["name"]
+	cards.image_link=request.form["image_link"]
+	cards.link=request.form["link"]
+	cards.weather=request.form["weather"]
+	cards.cost=request.form["cost"]
+	cards.num_people=request.form["num_people"]
+
+    #session.merge(post)
+	session.commit()
+	return redirect(url_for("cards"))
+
+@app.route("/")
+@app.route("/concierge", methods=["GET"])
+def concierge_get():
+
+	return render_template("concierge.html")
 
 
+@app.route("/")
+@app.route("/concierge", methods=["POST"])
+def concierge_post():
+	card = Card(
+		name = request.form["name"],
+		link = request.form["link"],
+		image_link = request.form["image_link"],
+		weather = request.form["weather"],
+		cost = request.form["cost"],
+		num_people = request.form["num_people"],
+	)
+	for card in session.query(Card).filter(Card.weather == weather):
+           print(card.id)
+
+
+
+	return redirect(url_for("card/<int:card>"))
 
 
