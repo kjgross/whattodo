@@ -20,3 +20,8 @@ Initial set up of environment:
 3. Install the dependencies - pip install flask sqlalchemy flask-login flask-script flask-migrate mistune
 4. Freeze the dependencies - pip freeze > requirements.txt
 5. Ignore the virtualenv - echo env > .gitignore
+
+To Do:
+1. models
+2. views
+3. Flesh out until works! 

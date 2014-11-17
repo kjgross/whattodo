@@ -1,0 +1,12 @@
+div.metadata {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+li {
+	text-transform: capitalize;;
+}
+ul {
+  columns: 3;
+  -webkit-columns: 1;
+  -moz-columns: 3;
+}

@@ -1,0 +1,29 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+{% block content %}
+
+{% for card in cards %}
+{{ macros.render_card(card) }}
+{% endfor %}
+
+<ul class="carder">
+    {% if has_next %}
+    <li class="previous" >
+    <a href="{{ url_for('cards', card=card - 1) }}">&larr; Older</a>
+    </li>
+    {% endif %}
+    {% if has_prev %}
+    <li class="next">
+    <a href="{{ url_for('cards', card=card + 1) }}">&rarr; Newer</a>
+    </li>
+    {% endif %}
+    <li class="edit">
+    <a href="edit/{{card}}">Edit Post</a>
+	</li>
+	<li class="delete">
+    <a href="delete/{{card}}">Delete Post</a>
+	</li>
+</ul>
+
+
+{% endblock %}

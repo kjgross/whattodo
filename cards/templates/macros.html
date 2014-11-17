@@ -1,0 +1,28 @@
+{% macro render_card(card) %}
+<div class="row">
+    <div class="col-md-10">
+        <h1>
+            <a href="/card/{{card.id -1}}">{{ card.name }}</a>
+        </h1>
+        <body> 
+            <h2>Delicious Food</h2>
+            <img src="{{card.image_link}}" alt="Foodz" style="width:304px;height:228px">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{card.link}}">{{ card.name }}</a>
+                </li>
+                <li>
+                    <h5><i>Where should you do this activity?</i> {{card.weather}}</h5>
+                </li>
+                <li>
+                    <h5><i>How much does it cost?</i> {{card.cost}}</h5>
+                </li>
+                <li>
+                    <h5><i>Is this for a group or just you??</i> {{card.num_people}}</h5>
+                </li>
+
+        </body>
+    </div>
+</div>
+{% endmacro %}
+
