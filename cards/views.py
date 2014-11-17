@@ -66,14 +66,15 @@ def cards(card=1, paginate_by=1):
     ) 
 
 
-
-
-
+@app.route("/card/add", methods=["GET"])
+#@login_required
+def add_card_get():
+    return render_template("add_card.html")
 
 
 @app.route("/")
 @app.route("/card/add", methods=["POST"])
-@login_required
+#@login_required
 def add_card_post():
 	card = Card(
 		name = request.form["name"],
@@ -86,5 +87,9 @@ def add_card_post():
 	session.add(card)
 	session.commit()
 	return redirect(url_for("cards"))
+
+
+
+
 
 
